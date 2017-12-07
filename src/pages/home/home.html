@@ -1,28 +1,18 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Σύνδεση
+      Charity Run
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
-
-    <ion-item>
-      <ion-label floating>Όνομα</ion-label>
-      <ion-input type="text" #username></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label floating>Κωδικός</ion-label>
-      <ion-input type="password" #password></ion-input>
-    </ion-item>
-
-  </ion-list>
-
-  <div padding>
-    <button ion-button block (click)="login()">ΣΥΝΔΕΣΗ</button>
+  <div id="topButtons">
+    <div padding>
+      <button ion-button block (click)="login()">ΣΥΝΔΕΣΗ</button>
+    </div>
+    <div padding>
+      <button ion-button block (click)="register()">ΕΓΓΡΑΦΗ</button>
+    </div>
   </div>
-
 </ion-content>

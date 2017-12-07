@@ -1,6 +1,6 @@
 {
   "name": "CharityRun",
-  "app_id": "",
+  "app_id": "9812fa91",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
