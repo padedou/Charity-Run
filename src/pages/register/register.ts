@@ -20,6 +20,16 @@ export class RegisterPage {
     console.log('ionViewDidLoad RegisterPage');
   }
 
+  registerUser() {
+    this.fire.auth.createUserWithEmailAndPassword(this.email.value, this.password.value)
+    .then(data => {
+      this.navCtrl.setRoot(MainPage);
+    })
+    .catch(error => {
+      this.alert(this.greekifyMessage(error.message));
+    })
+  }
+
   alert(message: string) {
     this.alertCtrl.create({
       title: 'Εγγραφή απέτυχε',
@@ -28,14 +38,16 @@ export class RegisterPage {
     }).present();
   }
 
-  registerUser() {
-    this.fire.auth.createUserWithEmailAndPassword(this.email.value, this.password.value)
-    .then(data => {
-      this.navCtrl.setRoot(MainPage);
-    })
-    .catch(error => {
-      this.alert(error.message);
-    })
+  greekifyMessage(message: string) {
+    var greekMessage = 'Λάθος στοιχεία.';
+    if (message == 'The email address is badly formatted.') {
+      greekMessage = 'Το email δεν έχει σωστή μορφή.';
+    } else if (greekMessage == 'The password must be 6 characters long or more.') {
+      greekMessage = 'Ο κωδικός πρέπει να έχει περισσότερα απο 6 χαρακτήρες.';
+    } else if (greekMessage == 'The email address is already in use by another account.') {
+      greekMessage = 'Το email χρησιμοποιείται.';
+    }
+    return greekMessage;
   }
 
 }
