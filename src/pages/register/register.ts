@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, AlertController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import firebase from 'firebase';
 import { MainPage } from '../main/main';
@@ -16,11 +16,7 @@ export class RegisterPage {
   @ViewChild('password') password;
   firedata = firebase.database().ref('/users');
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private fire: AngularFireAuth, private alertCtrl: AlertController) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad RegisterPage');
+  constructor(public navCtrl: NavController, private fire: AngularFireAuth, private alertCtrl: AlertController) {
   }
 
   registerUser() {

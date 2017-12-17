@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 
 @IonicPage()
@@ -10,12 +10,8 @@ import { AngularFireAuth } from 'angularfire2/auth';
 export class MainPage {
   email: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private fire: AngularFireAuth) {
+  constructor(public navCtrl: NavController, private fire: AngularFireAuth) {
     this.email = this.fire.auth.currentUser.email;
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad MainPage');
   }
 
 }
