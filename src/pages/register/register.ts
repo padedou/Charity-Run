@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
+import firebase from 'firebase';
 import { MainPage } from '../main/main';
 
 @IonicPage()
@@ -10,8 +11,10 @@ import { MainPage } from '../main/main';
 })
 export class RegisterPage {
 
+  @ViewChild('displayName') displayName;
   @ViewChild('email') email;
   @ViewChild('password') password;
+  firedata = firebase.database().ref('/users');
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private fire: AngularFireAuth, private alertCtrl: AlertController) {
   }
@@ -22,6 +25,12 @@ export class RegisterPage {
 
   registerUser() {
     this.fire.auth.createUserWithEmailAndPassword(this.email.value, this.password.value)
+    .then(() => {
+        this.firedata.child(this.fire.auth.currentUser.uid).set({
+          uid: this.fire.auth.currentUser.uid,
+          displayName: this.displayName.value
+        })
+      })
     .then(data => {
       this.navCtrl.setRoot(MainPage);
     })
