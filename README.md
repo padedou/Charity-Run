@@ -3,7 +3,7 @@
 
 ## Installation
 
-### Install Cordova
+### Install globally Ionic and Cordova
 ```bash
 npm install -g ionic cordova
 ```
@@ -11,10 +11,9 @@ npm install -g ionic cordova
 ### Install Dependencies
 ```bash
 npm install
-npm install firebase angularfire2 --save (optional)
 ```
 
-## Run on browser
+## Run on browser in Ionic lab
 ```bash
 ionic serve --lab
 ```
