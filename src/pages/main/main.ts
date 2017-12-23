@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { LocationTrackerProvider } from '../../providers/location-tracker/location-tracker';
 
 @IonicPage()
 @Component({
@@ -10,8 +11,16 @@ import { AngularFireAuth } from 'angularfire2/auth';
 export class MainPage {
   email: string;
 
-  constructor(public navCtrl: NavController, private fire: AngularFireAuth) {
+  constructor(public navCtrl: NavController, private fire: AngularFireAuth, public locationTracker: LocationTrackerProvider) {
     this.email = this.fire.auth.currentUser.email;
+  }
+
+  start(){
+    this.locationTracker.startTracking();
+  }
+ 
+  stop(){
+    this.locationTracker.stopTracking();
   }
 
 }

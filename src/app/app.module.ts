@@ -13,6 +13,11 @@ import { MainPage } from '../pages/main/main';
 
 import { AngularFireModule} from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+
+import { LocationTrackerProvider } from '../providers/location-tracker/location-tracker';
+import { BackgroundGeolocation } from '@ionic-native/background-geolocation';
+import { Geolocation } from '@ionic-native/geolocation';
+
 var firebaseAuth = {
     apiKey: "AIzaSyCnPFdsmfFHxnGj6Vfi0tTWLmsrGQiSme0",
     authDomain: "charity-run.firebaseapp.com",
@@ -47,6 +52,9 @@ var firebaseAuth = {
   providers: [
     StatusBar,
     SplashScreen,
+    LocationTrackerProvider,
+    BackgroundGeolocation,
+    Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

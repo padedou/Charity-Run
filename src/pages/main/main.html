@@ -1,11 +1,17 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-       Τρέξε και δώσε χαρά σε άλλους
+       Τρέξε και μοίρασε χαρά
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  {{ email }}
+  <h3>Έτοιμος {{ email }} ;</h3>
+
+  <h3>Current Latitude: {{locationTracker.lat}}</h3>
+  <h3>Current Longitude: {{locationTracker.lng}}</h3>
+
+  <button ion-button full primary (click)="start()">Start</button>
+  <button ion-button full primary (click)="stop()">Stop</button>
 </ion-content>
