@@ -17,6 +17,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { LocationTrackerProvider } from '../providers/location-tracker/location-tracker';
 import { BackgroundGeolocation } from '@ionic-native/background-geolocation';
 import { Geolocation } from '@ionic-native/geolocation';
+import { GoogleMaps } from '@ionic-native/google-maps';
 
 var firebaseAuth = {
     apiKey: "AIzaSyCnPFdsmfFHxnGj6Vfi0tTWLmsrGQiSme0",
@@ -55,6 +56,7 @@ var firebaseAuth = {
     LocationTrackerProvider,
     BackgroundGeolocation,
     Geolocation,
+    GoogleMaps,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

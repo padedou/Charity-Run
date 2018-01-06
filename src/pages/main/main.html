@@ -12,6 +12,8 @@
   <h3>Current Latitude: {{locationTracker.lat}}</h3>
   <h3>Current Longitude: {{locationTracker.lng}}</h3>
 
+  <div #map id="map"></div>
+
   <button ion-button full primary (click)="start()">Start</button>
   <button ion-button full primary (click)="stop()">Stop</button>
 </ion-content>
