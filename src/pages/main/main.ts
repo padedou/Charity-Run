@@ -23,7 +23,7 @@ export class MainPage {
           console.log('Map is ready!');
           this.loadMarker(position);
         });
-        
+        this.loadMarker(position);
       });
 
     });
