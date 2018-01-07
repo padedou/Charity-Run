@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, Platform } from 'ionic-angular';
+import { HomePage } from '../home/home';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { LocationTrackerProvider } from '../../providers/location-tracker/location-tracker';
 import { Geolocation } from '@ionic-native/geolocation';
@@ -68,6 +69,12 @@ export class MainPage {
  
   stop(){
     this.locationTracker.stopTracking();
+  }
+
+  logout() {
+    this.fire.auth.signOut().then(() => {
+      this.navCtrl.push(HomePage);
+    })
   }
 
 }
