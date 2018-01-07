@@ -9,7 +9,6 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
-import { MainPage } from '../pages/main/main';
 
 import { AngularFireModule} from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -28,7 +27,6 @@ var firebaseAuth = {
     HomePage,
     LoginPage,
     RegisterPage,
-    MainPage
   ],
   imports: [
     BrowserModule,
@@ -42,7 +40,6 @@ var firebaseAuth = {
     HomePage,
     LoginPage,
     RegisterPage,
-    MainPage
   ],
   providers: [
     StatusBar,

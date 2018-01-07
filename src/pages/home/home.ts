@@ -1,6 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavController } from 'ionic-angular';
-
 import { RegisterPage } from '../register/register';
 import { LoginPage } from '../login/login';
 
@@ -14,7 +13,7 @@ export class HomePage {
   @ViewChild('password') password;
 
   constructor(public navCtrl: NavController) {
-
+    
   }
 
   login() {
